@@ -13,6 +13,7 @@ function movieDetails(event) {
 	let temp = event.target.getAttribute('data-id');
 	console.log(temp);
 	localStorage.setItem("movieId", temp);
+	window.location.href = "details.html"
 }
 
 function firstApiCall(event) {
@@ -32,14 +33,17 @@ function firstApiCall(event) {
 	})
 		.then(function (response) {
 			console.log(response)
+			if(response.Response === "True"){
 			//sample of a poster used for testing 
+			document.getElementById('poster').innerHTML = "";
 			let posterImg = $('<img>'); 
 			posterImg.attr('src', response.Search[0].Poster);
 			posterImg.attr('data-id', response.Search[0].imdbID);
 			posterImg.addClass('poster');
 			posterImg.appendTo('#poster');
-			
-
+		} else {
+			console.log(response.Error)
+		}
 		})
 }
 
