@@ -55,4 +55,5 @@ function onLoad() {
     secondApiCall();
     thirdApiCall();
 }
-onLoad();
+
+window.addEventListener("DOMContentLoaded" , onLoad);
