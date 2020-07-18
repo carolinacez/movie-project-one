@@ -4,57 +4,46 @@ $(document).foundation() //do not change this line
 
 
 //Action handlers and listeners
-$('#titleBtn').on('click', test);
+$('#titleBtn').on('click', firstApiCall);
+$('#poster').on('click' , movieDetails);
 
-function test(){
-    console.log('success');
-    console.log($('#movieTitle').val());
+
+function movieDetails(event) {
+	console.log('success');
+	let temp = event.target.getAttribute('data-id');
+	console.log(temp);
+	localStorage.setItem("movieId", temp);
 }
 
-/*
-Movie Database. use this to search by text and get the imdbID (also returns poster & title)
- fetch("https://movie-database-imdb-alternative.p.rapidapi.com/?page=1&r=json&s=Avengers%20Endgame", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "movie-database-imdb-alternative.p.rapidapi.com",
-		"x-rapidapi-key": "ea27b482e3mshcea35e8094dc17ep18e197jsn4219678d9404"
-	}
-})
-.then(response => {
-	console.log(response);
-})
-.catch(err => {
-	console.log(err);
-});
+function firstApiCall(event) {
+	event.preventDefault()
+	
+	let ApiValueOne = $("#movieTitle").val().trim()
 
-IMDB - Unofficial. use this to search with movie id from first search (returns cast etc)
-fetch("https://imdb-internet-movie-database-unofficial.p.rapidapi.com/film/tt1375666", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "imdb-internet-movie-database-unofficial.p.rapidapi.com",
-		"x-rapidapi-key": "ea27b482e3mshcea35e8094dc17ep18e197jsn4219678d9404"
-	}
-})
-.then(response => {
-	console.log(response);
-})
-.catch(err => {
-	console.log(err);
-});
+	let firstUrlApi = "https://movie-database-imdb-alternative.p.rapidapi.com/?page=1&r=json&s=" + ApiValueOne
 
-Streamzui - use to link to amazon prime
-fetch("https://streamzui-streamzui-v1.p.rapidapi.com/search?type=Movie&country=us&page=1", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "streamzui-streamzui-v1.p.rapidapi.com",
-		"x-rapidapi-key": "ea27b482e3mshcea35e8094dc17ep18e197jsn4219678d9404"
-	}
-})
-.then(response => {
-	console.log(response);
-})
-.catch(err => {
-	console.log(err);
-});
+	$.ajax({
+		url: firstUrlApi,
+		type: "GET",
+		headers: {
+			"x-rapidapi-host": "movie-database-imdb-alternative.p.rapidapi.com",
+			"x-rapidapi-key": "ea27b482e3mshcea35e8094dc17ep18e197jsn4219678d9404"
+		}
+	})
+		.then(function (response) {
+			console.log(response)
+			//sample of a poster used for testing 
+			let posterImg = $('<img>'); 
+			posterImg.attr('src', response.Search[0].Poster);
+			posterImg.attr('data-id', response.Search[0].imdbID);
+			posterImg.addClass('poster');
+			posterImg.appendTo('#poster');
+			
 
-*/
+		})
+}
+
+
+
+
+
