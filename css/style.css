@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box
+}
+
+.body-1 {
+    background-image: url(../assets/closedcurtains.png);
+    background-size: cover;
+}
+
+.body-2 {
+    background-image: url(../assets/opencurtains.png);
+    background-size: cover;
+    background-color: black;
+    background-position: bottom;
+}
+
+#search {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.top-bar {
+    background-color: black;
+    margin: auto;
+}
+
+#poster {
+
+}
