@@ -11,16 +11,22 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-
-    <div class="grid-x grid-padding-x">
+<body class="body-1">
+    <header class="top-bar">
+    </header>
+    <div class="grid-x grid-padding-x" id="search">
         <div class="large-4 medium-4 cell">
-            <label>Input Label</label>
-            <input type="text" placeholder="large-4.cell" id='movieTitle' />
+            <label>Search Movie Title</label>
+            <input type="text" placeholder="Movie Title" id='movieTitle' />
         </div>
-        <button class="button" id="titleBtn">Simple Button</a><br /> </button>
+        <button class="button warning" id="titleBtn">Search</a><br /> </button>
     </div>
     <div id="poster"></div>
+    <div class="poster-wrapper">
+        <img id="poster-img" src="">
+        <h3 id="movie-title"></h3>
+        <div id="movie-id"></div>
+    </div>
 
 
     <script src="js/vendor/jquery.js"></script>
