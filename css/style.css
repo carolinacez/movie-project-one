@@ -12,19 +12,37 @@
     background-size: cover;
     background-color: black;
     background-position: bottom;
+    height: 100vh;
 }
 
 #search {
-    display: flex;
     justify-content: center;
-    margin: auto;
+    padding-top: 125px;
 }
 
+#enterMovie {
+    text-align: center;
+    font-style: oblique;
+    color: gold;
+}
+#titleBtn {
+    /* display: grsid; */
+    background-image: url(../assets/reelicon.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor:pointer;
+    border:none;
+    width: auto;
+    
+    
+}
+s
 .top-bar {
     background-color: black;
     margin: auto;
 }
 
 #poster {
+    
 
 }
