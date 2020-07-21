@@ -33,19 +33,30 @@ function firstApiCall(event) {
 	})
 		.then(function (response) {
 			console.log(response)
-			if(response.Response === "True"){
-			//sample of a poster used for testing 
 			document.getElementById('poster').innerHTML = "";
+			//sample of a poster used for testing 
+			for(i = 0; i < response.Search.length; i++) {
+			if(response.Response === "True"){
+			if(response.Search[i].Poster !== "N/A"){
 			let posterImg = $('<img>'); 
-			posterImg.attr('src', response.Search[0].Poster);
-			posterImg.attr('data-id', response.Search[0].imdbID);
+			posterImg.attr('src', response.Search[i].Poster);
+			posterImg.attr('data-id', response.Search[i].imdbID);
 			posterImg.addClass('poster');
 			posterImg.appendTo('#poster');
-		} else {
-			console.log(response.Error)
 		}
-		})
-}
+			
+			
+		} else {
+		console.log(response.Error)
+		}
+	} 
+	
+
+	})
+	}
+
+	
+	
 
 
 

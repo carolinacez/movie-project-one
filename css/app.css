@@ -1,0 +1,39 @@
+.wrapper1, .wrapper2 {
+    height: 900px;
+    overflow-x: scroll;
+    overflow-y:hidden;
+    width: 900px;
+
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto; 
+ }
+  
+  .wrapper1 {height: 20px; }
+  .wrapper2 {height: 500px;
+width: 300px;
+margin: auto; }
+  
+  .div1 {
+    width:1000px;
+    height: 20px;
+  }
+  
+  .div2 {
+    width:1000px;
+    height: 200px;
+    background-color: #88FF88;
+    overflow: auto;
+  }  
+  #poster {
+      max-height: 500px;
+      max-width: 300px;
+  }
+  .poster {
+      height: 100%;
+      width: 100%;
+  }
+  
+
+  
