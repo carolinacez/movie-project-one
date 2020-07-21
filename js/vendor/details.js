@@ -17,8 +17,9 @@ function secondApiCall() {
         }
     })
         .then(function (response) {
-            console.log(response)
+            //console.log(response)
             //display function goes here 
+            display(response);
         })
 }
 
@@ -57,3 +58,57 @@ function onLoad() {
 }
 
 window.addEventListener("DOMContentLoaded" , onLoad);
+
+
+function display(data){
+    console.log(data);
+
+    let actorEL = document.getElementById('actors');
+    let trailerEl = document.getElementById('trailer');
+    let synopsisEl = document.getElementById('synopsis');
+    let titleEl = document.getElementById('movie-details');
+
+
+    
+    for(let i = 0; i < data.cast.length; i++){
+    let newActorEl = document.createElement('div');
+    newActorEl.classList = 'card';
+    let newActor = document.createElement('div');
+    newActor.classList = 'card-divider';
+    newActor.innerHTML = data.cast[i].actor;
+    newActorEl.appendChild(newActor);
+    let newChar = document.createElement('div');
+    newChar.classList = 'card-section';
+    newChar.innerHTML = data.cast[i].character;
+    newActorEl.appendChild(newChar);
+    actorEL.appendChild(newActorEl);
+    }
+    
+
+    let plot = document.createElement('div');
+    plot.innerHTML = data.plot;
+    synopsisEl.appendChild(plot);
+    
+    let title = document.createElement('div');
+    title.innerHTML = data.title;
+    titleEl.appendChild(title);
+    let year = document.createElement('div');
+    year.innerHTML = data.year;
+    titleEl.appendChild(year);
+    let runTime = document.createElement('div');
+    runTime.innerHTML = data.length;
+    titleEl.appendChild(runTime);
+
+    let link = document.createTextNode('Link to Trailer');
+    let trailerLink  = document.createElement('a');
+    trailerLink.appendChild(link);
+    trailerLink.href = data.trailer.link;
+    trailerLink.title = "Link to trailer."
+    trailerEl.appendChild(trailerLink);
+    
+    
+    
+
+    
+}
+
