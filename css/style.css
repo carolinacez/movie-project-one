@@ -5,6 +5,9 @@
 .body-1 {
     background-image: url(../assets/closedcurtains.png);
     background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .body-2 {
@@ -63,6 +66,7 @@ s
 }
 
 #trailer {
+    padding-top: 25px;
     margin: auto;
     width: 80%;
     text-align: center;
