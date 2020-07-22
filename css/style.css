@@ -11,7 +11,9 @@
     background-image: url(../assets/opencurtains.png);
     background-size: cover;
     background-color: black;
-    background-position: bottom;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
     height: 100vh;
 }
 
@@ -42,7 +44,26 @@ s
     margin: auto;
 }
 
-#poster {
+.actors {
+    width: 60%;
+    margin-top: 15px;
     
+}
 
+#synopsis {
+    color: gold;
+    width: 60%;
+    margin: auto;
+
+}
+
+#movie-details {
+    color: gold;
+
+}
+
+#trailer {
+    margin: auto;
+    width: 80%;
+    text-align: center;
 }

@@ -72,7 +72,7 @@ function display(data){
     
     for(let i = 0; i < data.cast.length; i++){
     let newActorEl = document.createElement('div');
-    newActorEl.classList = 'card';
+    newActorEl.classList = 'card cell small-4';
     let newActor = document.createElement('div');
     newActor.classList = 'card-divider';
     newActor.innerHTML = data.cast[i].actor;
@@ -89,13 +89,13 @@ function display(data){
     plot.innerHTML = data.plot;
     synopsisEl.appendChild(plot);
     
-    let title = document.createElement('div');
+    let title = document.createElement('h3');
     title.innerHTML = data.title;
     titleEl.appendChild(title);
-    let year = document.createElement('div');
+    let year = document.createElement('h4');
     year.innerHTML = data.year;
     titleEl.appendChild(year);
-    let runTime = document.createElement('div');
+    let runTime = document.createElement('h4');
     runTime.innerHTML = data.length;
     titleEl.appendChild(runTime);
 
