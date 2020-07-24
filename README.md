@@ -17,4 +17,6 @@ Made with ❤️ by Joe, Carolina, Bryan and Cindy
 ©️2020 Movie Trailer Search
 
 
+
+https://user-images.githubusercontent.com/64931643/88356286-4b639680-cd35-11ea-83bb-09d8491dbf8c.png
 https://user-images.githubusercontent.com/64931643/88356339-7352fa00-cd35-11ea-98ee-f3e8116677f4.png
