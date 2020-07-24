@@ -14,5 +14,7 @@ https://khargol1.github.io/project-1/
 Contribution
 Made with ❤️ by Joe, Carolina, Bryan and Cindy 
 
-©️2020 Movie Trailer Search 
+©️2020 Movie Trailer Search
+
+
 https://user-images.githubusercontent.com/64931643/88356339-7352fa00-cd35-11ea-98ee-f3e8116677f4.png
